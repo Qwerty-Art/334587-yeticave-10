@@ -1,5 +1,6 @@
 <?php
 require('helpers.php');
+require('function.php');
 
 $is_auth = rand(0, 1);
 $user_name = 'Артур';
@@ -43,19 +44,7 @@ $products = [
 	]
 ];
 
-function formatAmount($number)
-{
-	$number = ceil($number);
-	if ($number >= 1000) {
-		$number =	number_format($number, 0, '', ' ');
-	}
-	return $number . ' ₽';
-}
 
-function esc($str) {
-	$content = strip_tags($str);
-	return $content;
-}
 
 $page_content = include_template(
 	'main.php',
@@ -69,7 +58,8 @@ $layout_content = include_template(
 	[
 		'main' => $page_content, 'category' => $category,
 		'title_page' => 'Главная',
-		'user_name' => $user_name
+		'user_name' => $user_name,
+		'is_auth' => $is_auth
 	]
 );
 
