@@ -1,4 +1,5 @@
 <?php
+require('init.php');
 require('helpers.php');
 require('function.php');
 

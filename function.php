@@ -17,11 +17,11 @@ function esc($str) {
 function time_counter($date) {
   $result = [];
   $date = strtotime($date);
-  if(gettype($date) == 'integer') {
+  if(gettype($date) === 'integer') {
     $diff = $date - time();
     $hour = floor($diff / 3600);
-    $min = ($diff / 60) % 60;
-    array_push($result, $hour, $min);
+    $minute = ($diff / 60) % 60;
+    array_push($result, $hour, $minute);
 
     return $result;
   }

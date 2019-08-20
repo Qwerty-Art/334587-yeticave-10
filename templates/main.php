@@ -32,7 +32,7 @@
             </div>
             <?php $time_finish = time_counter($value['date_finish']);
               $result_time = $time_finish[0] . ':' . $time_finish[1];
-              if ($time_finish[0] < 1 && $time_finish[1] > 0) { ?>
+              if ($time_finish[0] < 0 && $time_finish[1] > 0) { ?>
             <div class="lot__timer timer timer--finishing">
               <?= $result_time; ?>
             </div>
